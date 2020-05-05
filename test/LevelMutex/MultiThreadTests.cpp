@@ -22,7 +22,10 @@
 #include "MultiThreadTests.hpp"
 
 #include <assert.h>
+#if defined(_WIN32)
 #include <process.h>
+#else  
+#endif
 #include <stdlib.h>
 #include <time.h>
 

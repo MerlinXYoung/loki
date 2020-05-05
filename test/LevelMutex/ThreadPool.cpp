@@ -19,8 +19,11 @@
 #include "ThreadPool.hpp"
 
 #include <assert.h>
-
+#if defined(_WIN32)
 #include <process.h>
+#else
+#include <unistd.h>
+#endif
 
 
 using namespace ::std;
@@ -36,7 +39,7 @@ using namespace ::std;
 #endif
 
 
-volatile Thread * Thread::s_thread = nullptr;
+volatile LOKI_THREAD_LOCAL Thread * Thread::s_thread = nullptr;
 
 
 // ----------------------------------------------------------------------------

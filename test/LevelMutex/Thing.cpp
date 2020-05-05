@@ -265,7 +265,7 @@ void GoToSleep( unsigned int milliSeconds )
     unsigned int seconds = milliSeconds / 1000;
     if ( 0 == seconds )
         seconds = 1;
-    ::_sleep( seconds );
+    ::sleep( seconds );
 #else
     #error "Find out if your compiler supports a sleep command and add it here."
 #endif
